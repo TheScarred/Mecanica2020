@@ -18,37 +18,43 @@ public class EcEk : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !moving)
-        {
-            charging = true;
-            arrow.SetActive(moving);
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space) && charging)
-            Launch();
-
-        if (Input.GetKey(KeyCode.Space) && charging)
-            Charge();
+        if (!charging && moving && rigi.velocity.magnitude <= 0)
+            ReSet();
 
         if (!charging && !moving)
             Rotate();
 
-        if (moving && rigi.velocity.magnitude <= 0)
-            ReSet();
+        if (Input.GetKeyDown(KeyCode.Space) && !charging && !moving)
+            Begin();
 
-        Debug.Log(moving);
+        if (Input.GetKeyUp(KeyCode.Space) && charging)
+            Launch();
+
+        if (Input.GetKey(KeyCode.Space) && charging && !moving)
+            Charge();
+
+    }
+
+    public void Begin()
+    {
+        charging = true;
+        arrow.SetActive(false);
     }
 
     public void Charge()
     {
-        charge += Time.deltaTime;
+        if (charge < 1)
+            charge += Time.deltaTime;
+        else
+            charge = 1;
+
         chargeGauge.fillAmount = charge;
     }
 
     public void Launch()
     {
-        moving = true;
         charging = false;
+        moving = true;
         rigi.AddForce(transform.forward * charge * 1000);
         charge = 0;
     }
