@@ -18,7 +18,6 @@ public class Girl : MonoBehaviour
     {
         if (otherGirl.mass.text == "" || otherGirl.move.text == "")
         {
-           Debug.Log()
 
             rigi.mass = float.Parse(mass.text);
 
