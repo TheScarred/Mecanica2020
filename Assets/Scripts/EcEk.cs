@@ -6,6 +6,8 @@ public class EcEk : MonoBehaviour
     Rigidbody rigi;
     GameObject arrow;
     public Image chargeGauge;
+    public float mass;
+    public Vector3 gravity;
     float charge = 0;
     bool charging = false;
     bool moving = false;
@@ -14,6 +16,7 @@ public class EcEk : MonoBehaviour
     {
         rigi = GetComponent<Rigidbody>();
         arrow = transform.GetChild(0).gameObject;
+        gravity = new Vector3(0, -9.81f, 0);
     }
 
     private void Update()
@@ -32,8 +35,13 @@ public class EcEk : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && charging && !moving)
             Charge();
-
     }
+
+    private void FixedUpdate()
+    {
+        rigi.AddForce(mass * gravity, ForceMode.Acceleration);
+    }
+
 
     public void Begin()
     {
@@ -44,12 +52,16 @@ public class EcEk : MonoBehaviour
     public void Charge()
     {
         if (charge < 1)
+        {
             charge += Time.deltaTime;
+            transform.localScale += Vector3.one * Time.deltaTime;
+        }
         else
             charge = 1;
 
         chargeGauge.fillAmount = charge;
     }
+
 
     public void Launch()
     {
@@ -72,6 +84,7 @@ public class EcEk : MonoBehaviour
     {
         moving = false;
         chargeGauge.fillAmount = charge;
+        transform.localScale = Vector3.one;
         arrow.SetActive(!moving);
     }
 }
