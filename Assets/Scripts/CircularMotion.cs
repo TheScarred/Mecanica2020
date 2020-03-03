@@ -30,6 +30,7 @@ public class CircularMotion : MonoBehaviour
     public void Motion()
     {
         transform.Rotate(0, velocity.value * Time.deltaTime, 0);
+        //Vector3.Lerp(transform.localRotation.eulerAngles, transform.localRotation.eulerAngles, float.Parse(T.text));
     }
 
     public void UpdateVariables()
