@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class ballDespawn : MonoBehaviour
 {
-    private void OnCollisionEnter(Collider other) => gameObject.SetActive(false);
+    private void OnCollisionEnter(Collision collision) => gameObject.SetActive(false);
 
 }
