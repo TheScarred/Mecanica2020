@@ -60,7 +60,7 @@ public class ParabolicThrow : MonoBehaviour
         else
             newAngle = angle;
 
-        GameObject go = Instantiate(bullet, transform.position + (transform.up * 2), Quaternion.identity);
+        GameObject go = Instantiate(bullet, trail.gameObject.transform.position, Quaternion.identity);
         Rigidbody rigi = go.GetComponent<Rigidbody>();
 
         float xVel = velocity * Mathf.Cos(newAngle * Mathf.PI / 180);
