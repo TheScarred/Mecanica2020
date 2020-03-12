@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tiro Parabolico.unity
+    guid: ca2fa9cd76fdd3b4084209ce9ac1bf94
   m_configObjects: {}
