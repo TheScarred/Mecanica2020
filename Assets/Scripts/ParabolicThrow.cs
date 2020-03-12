@@ -8,7 +8,7 @@ public class ParabolicThrow : MonoBehaviour
     public GameObject bullet;
     public LineRenderer trail;
     public Slider velocity, angle;
-    public InputField v, a, x;
+    public InputField v, a, x, h;
 
     float g;
     public int resolution = 10;
@@ -83,7 +83,9 @@ public class ParabolicThrow : MonoBehaviour
         float radAngle = Mathf.Deg2Rad * float.Parse(a.text);
         Vector3[] array = new Vector3[resolution + 1];
         float maxDistance = (Mathf.Pow(vel, 2f) * Mathf.Sin(2 * radAngle)) / g;
+        float maxHeight = (Mathf.Pow(vel, 2f) * Mathf.Pow(Mathf.Sin(radAngle), 2)) / (2 * g);
         x.text = maxDistance.ToString();
+        h.text = maxHeight.ToString();
 
         for (int i = 0; i <= resolution; i++)
         {
