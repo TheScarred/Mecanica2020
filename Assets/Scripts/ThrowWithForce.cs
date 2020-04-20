@@ -51,15 +51,15 @@ public class ThrowWithForce : MonoBehaviour
         }
     }
 
-    public void Fire(float velocity, float angle)
+    public void Fire(float force, float angle)
     {
         GameObject go = Instantiate(bullet, trail.gameObject.transform.position, Quaternion.identity);
         Rigidbody rigi = go.GetComponent<Rigidbody>();
 
-        float xVel = velocity * Mathf.Cos(angle * Mathf.PI / 180);
-        float yVel = velocity * Mathf.Sin(angle * Mathf.PI / 180);
+        float xAcc = force * Mathf.Cos(angle * Mathf.PI / 180);
+        float yAcc = force * Mathf.Sin(angle * Mathf.PI / 180);
 
-        rigi.velocity = new Vector3(0, yVel, xVel);
+        rigi.velocity = new Vector3(0, yAcc, xAcc);
 
         RenderTrail();
     }
@@ -78,7 +78,7 @@ public class ThrowWithForce : MonoBehaviour
         float yAcc = force * Mathf.Sin(radAngle) / 1;//masa
 
         Vector3[] array = new Vector3[resolution + 1];
-        float maxDistance = (Mathf.Pow(force, 2f) * Mathf.Sin(2 * radAngle)) / g;
+        float maxDistance =  (Mathf.Pow(force, 2f) * Mathf.Sin(2 * radAngle)) / g;
 
         ax.text = xAcc.ToString();
         ay.text = yAcc.ToString();
