@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 295536826}
   - component: {fileID: 295536825}
   - component: {fileID: 295536824}
-  - component: {fileID: 295536828}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -215,19 +214,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 95.581}
---- !u!114 &295536828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295536823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd20e36d4f865ce40bbfce274dd0c423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 2046014675}
 --- !u!1 &340569492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,28 +1129,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046014670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.559999, y: 7.96, z: 5}
+  m_LocalPosition: {x: 10, y: 13.88, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2046014675
-Rigidbody:
+--- !u!114 &2046014675
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046014670}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd20e36d4f865ce40bbfce274dd0c423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143853054
 GameObject:
   m_ObjectHideFlags: 0

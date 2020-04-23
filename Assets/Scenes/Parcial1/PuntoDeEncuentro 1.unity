@@ -636,7 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ad4cb2300340c448f62dc87c5c8ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRight: 1
 --- !u!1 &1061012790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ad4cb2300340c448f62dc87c5c8ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRight: 0
 --- !u!135 &1729451679
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1785,7 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
